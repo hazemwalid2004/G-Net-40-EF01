@@ -8,6 +8,7 @@ namespace EntityframeworkASS01.Models
 {
     internal class Category
     {
+        public int CategoryId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public Boolean isactive { get; set; }

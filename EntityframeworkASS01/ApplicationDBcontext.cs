@@ -10,8 +10,9 @@ namespace EntityframeworkASS01
 {
     internal class ApplicationDBcontext:DbContext
     {
-        public ApplicationDBcontext(DbContextOptions<ApplicationDBcontext> optionsBuilder) : base(optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
+            options.UseSqlServer(@"Server=localhost;Database=MyAppDb;Trusted_Connection=True;TrustServerCertificate=True;");
         }
         #region DBsets
         public DbSet<Book> books { get; set; }
